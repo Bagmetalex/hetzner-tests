@@ -39,7 +39,8 @@ resource "local_file" "inventory" {
       instance.name => instance.ipv4_address
     })
   })
-  filename = format("%s/%s", abspath(path.root), "../ansible/inventory.yaml")
+  #filename = format("%s/%s", abspath(path.root), "../ansible/inventory.yaml")
+  filename = format("%s/%s", abspath(path.root), "../ansible/inventory")
 }
 
 # Output values_of_vms
