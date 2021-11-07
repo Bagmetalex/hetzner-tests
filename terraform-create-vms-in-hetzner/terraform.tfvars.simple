@@ -1,0 +1,4 @@
+hcloud_token = "ZjilRUZiy7AZuQcFQcrnoa9LQ6js4BStvuYblzEmxw6eCb4k8YG0Fn9RKAZrA6g9"
+hostname = ["master1", "master2","master3","worker1","worker2"]
+type_vm = ["cx21", "cx21","cx21","cx11","cx11"]
+

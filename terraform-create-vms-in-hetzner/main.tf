@@ -11,6 +11,17 @@ terraform {
 provider "hcloud" {
   token = var.hcloud_token
 }
+# Create a new SSH key in Hetzner Cloud
+resource "hcloud_ssh_key" "default" {
+  name       = "Terraform_ssh_key"
+  public_key = file("~/.ssh/id_rsa.pub")
+}
+
+# Output values_of_vms
+output "values_hcloud_ssh_key" {
+  value = hcloud_ssh_key.default
+}
+
 
 # Create a server
 resource "hcloud_server" "vm_instance" {
@@ -19,6 +30,7 @@ resource "hcloud_server" "vm_instance" {
   image       = "centos-7"
   server_type = "${var.type_vm[count.index]}"
   location    = "fsn1"
+  ssh_keys    = [hcloud_ssh_key.default.name]
 }
 
 resource "local_file" "inventory" {
