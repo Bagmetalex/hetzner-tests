@@ -27,7 +27,7 @@ output "values_hcloud_ssh_key" {
 resource "hcloud_server" "vm_instance" {
   count = length(var.hostname)
   name        = "${var.hostname[count.index]}"
-  image       = "centos-7"
+  image       = "${var.os_type}"
   server_type = "${var.type_vm[count.index]}"
   location    = "fsn1"
   ssh_keys    = [hcloud_ssh_key.default.name]

@@ -14,3 +14,11 @@ variable "type_vm" {
   type = list
   default = ["cx21", "cx11"]
 }
+variable "os_type" {
+  description = "VM OS type"
+  default     = "centos-7"
+}
+
+
+
+
