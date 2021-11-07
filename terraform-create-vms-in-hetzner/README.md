@@ -1,11 +1,11 @@
-# terraform-hetzner-deploy
+#### terraform-hetzner-deploy
 Deploy vm to hetzner cloud for tests
-# Настройка нужных виртуалок
-'''
+#### Настройка нужных виртуалок
+```
 mv terraform.tfvars.simple terraform.tfvars ; vi terraform.tfvars
-'''
-# И раскатываем
-'''
+```
+#### И раскатываем
+```
 terraform init
 terraform apply
-'''
+```
